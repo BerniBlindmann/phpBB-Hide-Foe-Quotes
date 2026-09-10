@@ -1,1 +1,9 @@
-
+services:
+    hrole.foequotes.listener:
+        class: hrole\foequotes\event\listener
+        arguments:
+            - '@dbal.conn'
+            - '@language'
+            - '@user'
+        tags:
+            - { name: event.listener }
